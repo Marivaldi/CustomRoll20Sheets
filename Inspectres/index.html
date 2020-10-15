@@ -1,0 +1,340 @@
+<input type="checkbox" name="attr_is_character" class="ischaracter" style="display: none;" />
+<input type="checkbox" name="attr_is_franchise" class="isfranchise" style="display: none;" />
+<div class="charactersheet">
+    <div>
+        <h2 style="display: inline-block;">Character Name:</h2>
+        <input type="text" name="attr_character_name" />
+    </div>
+    <div style="padding-top: 20px;">
+        <h3 style="display: inline-block;">Position:</h3>
+        <input type="text" name="attr_character_position" />
+    </div>
+    <div style="padding-top: 20px;">
+        <h3 style="display: inline-block;">Background:</h3>
+        <input type="text" name="attr_character_background" />
+    </div>
+    <div clss="2colrow" style="padding-top: 20px;">
+        <div class="col">
+            <h4 style="display: inline-block;">DOB:</h4>
+            <input type="text" name="attr_character_dob" />
+        </div>
+        <div class="col">
+            <h4 style="display: inline-block;">Next of Kin:</h4>
+            <input type="text" name="attr_character_next_of_kin" />
+        </div>
+    </div>
+    <div style="padding-top: 20px;">
+        <h2>Description</h2>
+        <textarea name="attr_character_description" style="resize: none;"></textarea>
+    </div>
+    <div style="padding-top: 20px; padding-bottom: 20px;">
+        <h2>Characteristics</h2>
+        <p style="font-size: 1.2em; font-style: italic;">Characteristics are assigned to you by other players during
+            Confessionals. If you play into on of these characteristics you get an extra Job die at the end of the
+            session
+        </p>
+        <div style="width: 100%;">
+            <fieldset class="repeating_characteristics" style="margin-top: 10px;">
+                <input type="text" name="attr_characteristic" style="width: 100%; margin-top: 10px;">
+            </fieldset>
+        </div>
+    </div>
+    <div class="2colrow" style="padding-top: 20px;">
+        <div class="col">
+            <div class="2colrow">
+                <div class="col">
+                    <h3>Skill</h3>
+                </div>
+                <div class="col">
+                    <h3>Max | Current</h3>
+                </div>
+            </div>
+            <hr>
+            <div class="2colrow" style="padding-top: 10px; padding-bottom: 10px;">
+                <div class="col">
+                    <button type="roll" value="/roll @{academics}d6kh1" name="roll_academics">
+                        <h3 style="display: inline-block;">Academics</h3>
+                    </button>
+                    <button type="roll" value="/roll @{academics}d6kl1" name="roll_stress_academics">Stress <span
+                            style="font-family: 'Pictos'">!</span></button>
+                </div>
+                <div class="col">
+                    <input type="number" name="attr_academics_max" min="1" max="4" style="margin-right: 7px;" /> <input
+                        type="number" name="attr_academics" min="0" max="9" />
+                </div>
+            </div>
+            <div class="2colrow" style="padding-top: 10px; padding-bottom: 10px;">
+                <div class="col">
+                    <button type="roll" value="/roll @{athletics}d6kh1" name="roll_athletics">
+                        <h3 style="display: inline-block;">Athletics</h3>
+                    </button>
+                    <button type="roll" value="/roll @{athletics}d6kl1" name="roll_stress_athletics">Stress <span
+                            style="font-family: 'Pictos'">!</span></button>
+                </div>
+                <div class="col">
+                    <input type="number" name="attr_athletics_max" min="1" max="4" style="margin-right: 7px;" /> <input
+                        type="number" name="attr_athletics" min="0" max="9" />
+                </div>
+            </div>
+            <div class="2colrow" style="padding-top: 10px; padding-bottom: 10px;">
+                <div class="col">
+                    <button type="roll" value="/roll @{technology}d6kh1" name="roll_technology">
+                        <h3 style="display: inline-block;">Academics</h3>
+                    </button>
+                    <button type="roll" value="/roll @{technology}d6kl1" name="roll_stress_technology">Stress <span
+                            style="font-family: 'Pictos'">!</span></button>
+                </div>
+                <div class="col">
+                    <input type="number" name="attr_technology_max" min="1" max="4" style="margin-right: 7px;" /> <input
+                        type="number" name="attr_technology" min="0" max="9" />
+                </div>
+            </div>
+            <div class="2colrow" style="padding-top: 10px; padding-bottom: 10px;">
+                <div class="col">
+                    <button type="roll" value="/roll @{contact}d6kh1" name="roll_contact"">
+                        <h3 style=" display: inline-block;">Contact</h3>
+                    </button>
+                    <button type="roll" value="/roll @{contact}d6kl1" name="roll_stress_contact">Stress <span
+                            style="font-family: 'Pictos'">!</span></button>
+                </div>
+                <div class="col">
+                    <input type="number" name="attr_contact_max" min="1" max="4" style="margin-right: 7px;" /> <input
+                        type="number" name="attr_contact" min="0" max="9" />
+                </div>
+            </div>
+            <p style="font-size: 1.2em; font-style: italic; margin-top: 10px;">
+                Distribute <b>9 points</b> among your skills. The number beside the skill represents the number of d6's
+                that
+                will be rolled for that skill.
+            </p>
+            <hr>
+            <div class="2colrow" style="padding-top: 10px;">
+                <div class="col">
+                    <h3 style="display: inline-block;">Cool Die</h3>
+                </div>
+                <div class="col">
+                    <input type="number" name="attr_cool_die" min="0" max="5" />
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <h3>Notes</h3>
+            <textarea></textarea>
+        </div>
+    </div>
+    <div style="padding-top: 50px; font-size: 1.4em;">
+        <h2 style="text-align: center; display: inline;">Skill Roll Chart</h2>
+        <span style="float:right; font-size: 0.7em;">(Highest # Rolled)</span>
+        <hr>
+        <div><b>6 Amazing!</b> Describe result. +2 job dice.</div>
+        <div><b>5 Good.</b> Describe result. +1 job die.</div>
+        <div><b>4 Fair.</b> Mostly successful, humorous or bad effect too.</div>
+        <div><b>3 Not great.</b> GM describes failure, player adds minor positive effect.</div>
+        <div><b>2 Bad.</b> GM decides outcome, player may suggest negative effects.</div>
+        <div><b>1 Terrible!</b> GM can treat as a botch, terrible mishap.</div>
+    </div>
+    <div style="padding-top: 50px; font-size: 1.4em;">
+        <h2 style="text-align: center; display: inline;">Stress Roll Chart</h2>
+        <span style="float:right; font-size: 0.7em;">(Lowest # Rolled)</span>
+        <hr>
+        <div><b>6 Awesome.</b> Gain a point of Cool and ignore stress.</div>
+        <div><b>5 Whatever.</b> No effect.</div>
+        <div><b>4 Ugh..</b> Suffer -1d to next skill roll.</div>
+        <div><b>3 Hey now!</b> Lose 1d from an appropriate skill.</div>
+        <div><b>2 What the?!</b> Lose 2d from 1 skill or 1d from 2 skills.</div>
+        <div><b>1 Aaugh!!!</b> Lose all your Cool and 1d per strength of the stress rolled.</div>
+    </div>
+</div>
+
+<div class="franchisesheet" style="width: 100%;">
+
+    <h1 style="text-align: center; width: 100%;">Inspectres</h1>
+    <h3 style="text-align: center; width: 100%;">Fighting the forces of darkness so you don't have to.</h3>
+    <hr>
+    <div style="padding-top: 30px">
+        <h2 style="text-decoration:underline;">Franchise Record</h2>
+    </div>
+    <div style="padding-top: 20px;">
+        <h3 style="display: inline-block;">Name:</h3>
+        <input type="text" name="attr_character_name" style="width: 60%; min-width: 100px;" />
+    </div>
+    <div style="padding-top: 20px;">
+        <h3 style="display: inline-block;">Tagline:</h3>
+        <input type="text" name="attr_franchise_tagline" style="width: 60%; min-width: 100px;" />
+    </div>
+    <div style="padding-top: 20px;">
+        <h3 style="display: inline-block;">1-800-</h3>
+        <input type="text" name="attr_franchise_vanity_number" style="width: 60%; min-width: 100px;" />
+    </div>
+    <div style="padding-top: 20px;">
+        <h3 style="display: inline-block;">Location:</h3>
+        <input type="text" name="attr_franchise_location" style="width: 60%; min-width: 100px;" />
+    </div>
+    <div class="2colrow" style="padding-top: 20px;">
+        <div class="col">
+            <h3 style="display: inline-block;">Owner:</h3>
+            <input type="text" name="attr_franchise_owner" style="width: 60%; min-width: 100px;" />
+        </div>
+        <div class="col">
+            <h3 style="display: inline-block;">Established:</h3>
+            <input type="text" name="attr_franchise_established_year" style="width: 60%; min-width: 100px;" />
+        </div>
+    </div>
+    <div style="padding-top: 20px;">
+        <h3 style="display: inline-block;">Primary Clientele:</h3>
+        <input type="text" name="attr_franchise_clientele" style="width: 60%; min-width: 100px;" />
+    </div>
+    <div class="2colrow" style="padding-top: 20px;">
+        <div class="col">
+            <h3>Library Card:</h3>
+            <input type="number" name="attr_library" value="0" />
+        </div>
+        <div class="col">
+            <h3>Gym Card:</h3>
+            <input type="number" name="attr_gym" value="0" />
+        </div>
+    </div>
+    <div class="2colrow" style="padding-top: 20px;">
+        <div class="col">
+            <h3>Credit Card:</h3>
+            <input type="number" name="attr_credit" value="0" />
+        </div>
+        <div class="col">
+            <h3>Bank:</h3>
+            <input type="number" name="attr_bank" value="0" />
+        </div>
+    </div>
+    <div style="padding-top: 20px;">
+        <h3>Total Franchise:</h3>
+        <input type="number" name="attr_total" value="@{bank}+@{credit}+@{library}+@{gym}" disabled="true" />
+    </div>
+    <div style="padding-top: 10px; font-size: 1.2em;">
+        Benchmarks: 5=new, 10=established, 20=successful, 30=home office
+    </div>
+    <div style="width:100%; padding-top: 20px;">
+        <h3>Franchise Notes:</h3>
+        <textarea name="attr_franchise_notes"></textarea>
+    </div>
+    <table style="border:solid 1px black; width: 100%; margin-top: 20px;">
+        <tr style="border-bottom: solid 1px black;">
+            <th>Name</th>
+            <th>Position</th>
+            <th>Date of Hire</th>
+            <th>Status</th>
+            <th>Termination Date</th>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" name="attr_employee_name">
+            </td>
+            <td>
+                <input type="text" name="attr_employee_position">
+            </td>
+            <td>
+                <input type="text" name="attr_employee_doh">
+            </td>
+            <td>
+                <input type="text" name="attr_employee_status">
+            </td>
+            <td>
+                <input type="text" name="attr_employee_termination_date">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" name="attr_employee_name2">
+            </td>
+            <td>
+                <input type="text" name="attr_employee_position2">
+            </td>
+            <td>
+                <input type="text" name="attr_employee_doh2">
+            </td>
+            <td>
+                <input type="text" name="attr_employee_status2">
+            </td>
+            <td>
+                <input type="text" name="attr_employee_termination_date2">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" name="attr_employee_name3">
+            </td>
+            <td>
+                <input type="text" name="attr_employee_position3">
+            </td>
+            <td>
+                <input type="text" name="attr_employee_doh3">
+            </td>
+            <td>
+                <input type="text" name="attr_employee_status3">
+            </td>
+            <td>
+                <input type="text" name="attr_employee_termination_date3">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" name="attr_employee_name4">
+            </td>
+            <td>
+                <input type="text" name="attr_employee_position4">
+            </td>
+            <td>
+                <input type="text" name="attr_employee_doh4">
+            </td>
+            <td>
+                <input type="text" name="attr_employee_status4">
+            </td>
+            <td>
+                <input type="text" name="attr_employee_termination_date4">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" name="attr_employee_name5">
+            </td>
+            <td>
+                <input type="text" name="attr_employee_position5">
+            </td>
+            <td>
+                <input type="text" name="attr_employee_doh5">
+            </td>
+            <td>
+                <input type="text" name="attr_employee_status5">
+            </td>
+            <td>
+                <input type="text" name="attr_employee_termination_date5">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" name="attr_employee_name6">
+            </td>
+            <td>
+                <input type="text" name="attr_employee_position6">
+            </td>
+            <td>
+                <input type="text" name="attr_employee_doh6">
+            </td>
+            <td>
+                <input type="text" name="attr_employee_status6">
+            </td>
+            <td>
+                <input type="text" name="attr_employee_termination_date7">
+            </td>
+        </tr>
+    </table>
+    <div style="padding-top: 50px; font-size: 1.4em;">
+        <h2 style="text-align: center; display: inline;">Bank Roll Chart</h2>
+        <span style="float:right; font-size: 0.7em;">(On the Bank Die)</span>
+        <hr>
+        <div><b>6 Windfall.</b> Add 2d to the bank. (Return the rolled die, +1d)</div>
+        <div><b>5 Interest. </b> Add 1d to the bank. (Return the rolled die.)</div>
+        <div><b>4.</b> The rolled die is spent.</div>
+        <div><b>3.</b> The rolled die is spent.</div>
+        <div><b>2 Surcharges.</b> Lose this die and 1d more. (Total, -2d.)</div>
+        <div><b>1 Surprise Bills!</b> Lose all bank dice.</div>
+    </div>
+</div>
